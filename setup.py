@@ -17,7 +17,7 @@ version = userjs.__version__
 setup(
     name='django-userjs',
     version=version,
-    packages=['userjs'],
+    packages=['userjs', 'userjs.templatetags'],
     install_requires=['six'],
     include_package_data=True,
     license='BSD',
