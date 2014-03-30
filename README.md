@@ -232,6 +232,12 @@ fragment will ideally be cached for a long time):
 
     <script src="{% url 'userjs' %}?product={{ product.pk }}"></script>
 
+Alternatively, you could use the `userjs_url` templatetag in your templates.
+It accepts a `dict` that will be used as the query string.
+
+    {% load userjs %}
+    <script src="{% userjs_url query_dict %}"></script>
+
 Then create a userjs post processor:
 
     # Defined in example_app.userjs
@@ -249,6 +255,7 @@ Finally, add the processor to `USERJS_POST_PROCESSORS`
     USERJS_POST_PROCESSORS = (
         'example_app.userjs.is_favorite_product',
     )
+
 
 
 ### What about jsonp?
